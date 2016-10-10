@@ -97,14 +97,4 @@ A %._.% for(a in 1:1000){
 a * b * (sqrt(a^2 + b^2))
 
 # Problem 10: Summation of primes ----
-sieve <- function(limit = 1e6, return =  FALSE){
-  sieve <- logical((limit-1)/2)
-  for(i in 1:(floor(sqrt(limit)-1)/2)){
-    if(!sieve[i]){
-      sieve[seq(2*i*(i+1), length(sieve), by = 2*i+1)] <- TRUE
-    }
-  }
-  prime <- c(2, (1:length(sieve))[!sieve] * 2 + 1)
-  if(return) prime
-}
-sum(sieve(2e6, return = TRUE))
+sum(numbers::Primes(2e6))
