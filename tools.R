@@ -3,7 +3,7 @@ strrev <- function(x){
   paste(substring(x, nchar(x):1, nchar(x):1), collapse = "")
 }
 
-# エラトステネスの篩
+# エラトステネスの篩(numbers::Primes()で同様のことができる)
 sieve <- function(limit = 1e6, return =  FALSE){
   ## 2i + 1 = nとし、3から開始する
   sieve <- logical((limit-1)/2)         # 1を除く数の半分が上限
