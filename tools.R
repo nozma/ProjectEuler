@@ -1,4 +1,4 @@
-# 文字や数字を反転させる
+# 文字や数字を反転させる(stringi::stri_reverseで同様のことができる)
 strrev <- function(x){
   paste(substring(x, nchar(x):1, nchar(x):1), collapse = "")
 }

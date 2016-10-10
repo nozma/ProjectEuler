@@ -16,11 +16,9 @@ result
 max(factorize(600851475143))
 
 # Problem 4: Largest palindrome product ----
-strrev <- function(x){
-  paste(substring(x, nchar(x):1, nchar(x):1), collapse = "")
-}
+library("stringi")
 is.palindrome <- function(x){
-  x[1] == strrev(x[1])
+  x[1] == stri_reverse(x[1])
 }
 for(i in (999*999):(100:100)){
   if(is.palindrome(i)){
