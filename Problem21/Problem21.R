@@ -13,6 +13,19 @@ d <- function(n){
   sum((1:(n-1))[n %% (1:(n-1)) == 0])
 }
 
+d <- function(n){
+  result = 1
+  for(i in 2:sqrt(n)){
+    if(n %% i == 0){
+      result = result + i + n/i
+    }
+    if(i * i == n) {
+      result = result - i
+    }
+  }
+  return(result)
+}
+
 Rcpp::sourceCpp("Problem21/sumfct.cpp")
 
 # solve ----
@@ -43,4 +56,3 @@ f2 <- function(){
 microbenchmark::microbenchmark(f1())
 microbenchmark::microbenchmark(f2())
 microbenchmark::microbenchmark(getans())
-

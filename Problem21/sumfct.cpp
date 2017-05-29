@@ -13,6 +13,9 @@ int dC(int n) {
       if(n % i == 0){
         result += i + n/i;
       } 
+      if(i*i == n){
+        result -= i;
+      }
     }
   }
   return result;
